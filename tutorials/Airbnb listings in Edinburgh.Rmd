@@ -4,6 +4,9 @@ author: "Sebastian Kaltenbach"
 output: html_notebook
 ---
 
+## Packages
+
+In this assignment we will work with the tidyverse package, as well as the dsbox package for the data, so let’s go ahead and load it!
 ```{r}
 library(tidyverse)
 library(dsbox)
