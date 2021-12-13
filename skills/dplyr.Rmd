@@ -1,0 +1,162 @@
+---
+title: "dplyr"
+author: "Sebastian Kaltenbach"
+output: html_notebook
+---
+
+```{r}
+library(dplyr)
+```
+
+## distinct() Function in Dplyr  –  Remove duplicate rows of a dataframe:
+
+```{r}
+mydata <- mtcars
+
+# Remove duplicate rows of the dataframe
+distinct(mydata)
+```
+
+## Drop by column names in Dplyr:
+
+select() function along with minus which is used to drop the columns by name
+```{r}
+mydata <- mtcars
+
+# Drop the columns of the dataframe
+select (mydata,-c(mpg,cyl,wt))
+```
+
+## Drop 3rd, 4th and 5th columns of the dataframe:
+
+```{r}
+mydata <- mtcars
+
+# Drop 3rd,4th and 5th columns of the dataframe
+
+select(mydata,-c(3,4,5))
+```
+
+## Re arrange or Re order the column of dataframe in R using Dplyr
+
+```{r}
+mydata <- mtcars
+
+# Reorder the columns of the dataframe
+
+Mydata1 = select(mydata, gear,hp,qsec,vs, everything())
+Mydata1
+```
+
+## Rename the column name in R using Dplyr
+
+```{r}
+mydata <- mtcars
+
+# Rename the column name of the dataframe
+Mydata1 = rename(mydata, displacement=disp, cylinder=cyl)
+Mydata1
+```
+
+## Filter or subsetting the rows in R using Dplyr
+
+```{r}
+mydata <- mtcars
+
+# subset the rows of dataframe with condition
+Mydata1 = filter(mydata,cyl==6)
+Mydata1
+```
+
+## Filter or subsetting the rows in R with multiple conditions using Dplyr
+
+```{r}
+mydata <- mtcars
+
+# subset the rows of dataframe with multiple conditions
+Mydata1 = filter(mydata, gear %in% c(4,5))
+Mydata1
+```
+
+## Summary of column in dataset in R using Dplyr – summarise()
+
+```{r}
+mydata <- mtcars
+
+# summarise the columns of dataframe
+summarise(mydata, mpg_mean=mean(mpg),mpg_median=median(mpg))
+```
+
+## Create new variable in R using Mutate Function in dplyr
+
+```{r}
+mydata2 <- iris 
+
+# Mutate function for creating new variable to the dataframe in R
+
+mydata3 = mutate(mydata2, sepal_length_width_ratio=Sepal.Length/Sepal.Width)
+head(mydata3)
+```
+
+## Join dataframes
+
+```{r}
+df_primary <- tribble(
+  ~ID, ~y,
+   "A", 5,
+   "B", 5,
+   "C", 8,
+   "D", 0,
+  "F", 9)
+df_secondary <- tribble(
+  ~ID, ~z,
+   "A", 30,
+   "B", 21,
+   "C", 22,
+   "D", 25,
+   "E", 29)
+```
+
+### Dplyr left_join()
+
+The most common way to merge two datasets is to use the left_join() function. We can see from the picture below that the key-pair matches perfectly the rows A, B, C and D from both datasets. However, E and F are left over. How do we treat these two observations? With the left_join(), we will keep all the variables in the original table and don’t consider the variables that do not have a key-paired in the destination table. In our example, the variable E does not exist in table 1. Therefore, the row will be dropped. The variable F comes from the origin table; it will be kept after the left_join() and return NA in the column z. The figure below reproduces what will happen with a left_join().
+```{r}
+left_join(df_primary, df_secondary, by ='ID')
+```
+
+### Dplyr right_join()
+
+The right_join() function works exactly like left_join(). The only difference is the row dropped. The value E, available in the destination data frame, exists in the new table and takes the value NA for the column y.
+```{r}
+right_join(df_primary, df_secondary, by = 'ID')
+```
+
+### Dplyr inner_join()
+
+When we are 100% sure that the two datasets won’t match, we can consider to return only rows existing in both dataset. This is possible when we need a clean dataset or when we don’t want to impute missing values with the mean or median.
+The inner_join()comes to help. This function excludes the unmatched rows.
+```{r}
+inner_join(df_primary, df_secondary, by ='ID')
+```
+
+### Dplyr full_join()
+
+Finally, the full_join() function keeps all observations and replace missing values with NA.
+```{r}
+full_join(df_primary, df_secondary, by = 'ID')
+```
+
+### Dplyr slice()
+
+Create an exemplary data frame to visualize functionality of slice-function.
+```{r}
+data <- data.frame(x1 = 1:5,                    
+                   x2 = LETTERS[1:5],
+                   x3 = 5)
+data 
+```
+
+The slice function of the dplyr R package can be used to extract columns of a data frame or tibble as shown below:
+```{r}
+slice(data, c(1, 3, 5)) 
+```
