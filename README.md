@@ -18,4 +18,4 @@ Some example skills that I would like you to demonstrate or that you could demon
 ## Useful references
 
 - [Free Book - R for Data Science](https://r4ds.had.co.nz/)
-- [Data Science in a Box](https://datasciencebox.org/index.html
+- [Data Science in a Box](https://datasciencebox.org/index.html)
