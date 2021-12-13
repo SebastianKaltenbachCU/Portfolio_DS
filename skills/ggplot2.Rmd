@@ -65,5 +65,22 @@ ggplot(data, aes(x=xValue, y=yValue)) +
   geom_line()
 ```
 
+## Boxplot
 
+Boxplot are built thanks to the geom_boxplot() geom of ggplot2. See its basic usage on the first example below. Note that reordering groups is an important step to get a more insightful figure. Also, showing individual data points with jittering is a good way to avoid hiding the underlying distribution.
+```{r}
+# A really basic boxplot.
+ggplot(mtcars, aes(x=as.factor(cyl), y=mpg)) + 
+    geom_boxplot(fill="slateblue", alpha=0.2) + 
+    xlab("cyl")
+```
 
+## Piechart
+
+The pie() function is natively provided in R. It allows to build nice piechart in seconds. Here is an overview of its functioning:
+```{r}
+Prop <- c(3,7,9,1,2)
+ 
+# Make the default Pie Plot
+pie(Prop)
+```
