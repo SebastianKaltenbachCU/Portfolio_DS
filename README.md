@@ -26,3 +26,9 @@ This course introduces the basics of data manipulation and pre-processing to ana
 - [KD Knuggets - Reproducibility, Replicability, and Data Science](https://www.kdnuggets.com/2019/11/reproducibility-replicability-data-science.html)
 - [Literate Programming](http://www.literateprogramming.com/)
 - [Joining data with R](https://hollyemblem.medium.com/joining-data-with-dplyr-in-r-874698eb8898)
+
+## Useful video links
+- [Lecture 1.2 — Machine Learning — [AI For Everyone | Andrew Ng]](https://youtu.be/ElnxAu6X_s4)
+- [Lecture 1.3 — What is data? — [AI For Everyone | Andrew Ng]](https://youtu.be/LiKUBqd_TWE)
+- [Lecture 1.4 — The terminology of AI — [AI For Everyone | Andrew Ng]](https://youtu.be/MoHIcHvxyio)
+- [Lecture 1.6 — What machine learning can and cannot do — [AI For Everyone | Andrew Ng]](https://youtu.be/g89RUEWywPQ)
