@@ -1,3 +1,4 @@
+![This is an image](/resources/logo_green.png)
 # Portfolio and repo description
 
 A portfolio is a collection of representative work.   In this class, your portfolio should be a set of R notebooks  (R markdown documents and the associated html document resulting from preview.)
