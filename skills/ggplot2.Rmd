@@ -1,5 +1,6 @@
 ---
 title: "ggplot2"
+author: "Sebastian Kaltenbach"
 output: html_notebook
 ---
 
