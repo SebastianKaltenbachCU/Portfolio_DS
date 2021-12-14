@@ -265,7 +265,7 @@ analyze_state <- function(this_state) {
 3. Grab the dataset (available in moodle in "week of 28 Sep" ) for the 10000 US restaurants.
 
 ```{r}
-FastFoodRestaurants <- read_csv("FastFoodRestaurants.csv")
+FastFoodRestaurants <- read_csv("data/FastFoodRestaurants.csv")
 # Clean the existing FastFoodRestaurants dataframe
 FastFoodRestaurants <- FastFoodRestaurants %>% 
   rename(state = province) %>%
@@ -316,7 +316,7 @@ analyze_distance_with_selection <- function(this_state, this_restaurant) {
 }
 ```
 
-5. Do some comparative analysis on several states of interest.   Are "denny's" any closer than the "other" restaurant?
+5. Do some comparative analysis on several states of interest. Are "denny's" any closer than the "other" restaurant?
 
 ```{r}
 
